@@ -1,17 +1,18 @@
 <script>
+import ProfileList from '../components/ProfileList.vue';
+
 export default {
-    setup() {
-
-
-        return {}
+    name: "HomeView",
+    components: {
+        ProfileList,
     }
+
 }
 </script>
         
 <template>
-    <div>
-
-    </div>
+    <ProfileList></ProfileList>
+    <h1>ciao</h1>
 </template>
 
 
