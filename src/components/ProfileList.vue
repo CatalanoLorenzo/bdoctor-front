@@ -1,13 +1,17 @@
 <script>
 import { store } from '../store';
+import JumboTron from './JumboTron.vue';
 import axios from 'axios';
 export default {
     name: "ProfileList",
+    components: {
+        JumboTron
+    },
     data() {
         return {
             store,
             url_image: store.api_url + 'storage/',
-            selectedSpecialization: '',
+
 
         }
     },
@@ -34,23 +38,6 @@ export default {
                 store.error = error.message
             })
         },
-        // API call select specialization
-        selectSpecialization() {
-            const specializationsUrl = store.api_url + store.api_profile
-            // + '?specialization_id=' + this.selectedSpecialization
-            axios.get(specializationsUrl,
-                { params: { specialization_id: this.selectedSpecialization } }
-            ).then(response => {
-                console.log(response);
-                store.profiles = response.data.results;
-                store.loading = false;
-            }).catch(error => {
-                console.log(error);
-                store.error = error.message
-            })
-            console.log('prova');
-
-        }
 
     },
     mounted() {
@@ -69,19 +56,7 @@ export default {
         
 <template>
     <div>
-        <div class="container py-4">
-
-            <div class="mb-3">
-                <label for="specializations" class="form-label fs-4 text-secondary">Specializations</label>
-                <select v-model="selectedSpecialization" @change="selectSpecialization()"
-                    class="form-select form-select-lg text-dark" name="specializations" id="specializations">
-                    <option class="text-dark" selected>Select one</option>
-                    <option v-for=" specialization in store.specializations" :value="specialization.id">
-                        {{ specialization.name }}
-                    </option>
-                </select>
-            </div>
-        </div>
+        <JumboTron></JumboTron>
         <!-- /select -->
 
         <div class="container">
