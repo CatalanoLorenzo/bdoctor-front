@@ -1,12 +1,10 @@
 <script>
 import ProfileList from '../components/ProfileList.vue';
-import AppFooter from '../components/AppFooter.vue';
 
 export default {
     name: "HomeView",
     components: {
         ProfileList,
-        AppFooter
     }
 
 }
@@ -14,7 +12,6 @@ export default {
         
 <template>
     <ProfileList></ProfileList>
-    <AppFooter></AppFooter>
 </template>
 
 

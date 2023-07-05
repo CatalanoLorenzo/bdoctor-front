@@ -1,0 +1,23 @@
+@use './variables.scss' as *;
+
+.jumbotron,
+.appFooter {
+    background-color: #6fc4ee;
+}
+
+;
+
+
+.jumbotron {
+    height: 500px;
+
+}
+
+@media screen and (min-width: 660px) {
+    .jumbotron {
+        background-image: url(/public/img/Doctor_01-removebg-preview.png);
+        background-repeat: no-repeat;
+        background-position: right 50px bottom;
+        background-size: 350px;
+    }
+}
