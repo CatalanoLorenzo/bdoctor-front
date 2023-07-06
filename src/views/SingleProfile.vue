@@ -6,6 +6,7 @@ export default {
     data() {
         return {
             store,
+            url_image: store.api_url + 'storage/',
         }
     },
     methods: {
@@ -16,7 +17,7 @@ export default {
                 .then(response => {
                     console.log(response);
                     if (response.data.success) {
-                        this.store.singleProfile = response.data;
+                        this.store.singleProfile = response.data.profile;
                     } else {
                         this.$router.push({
                             name: "pagenotfound404"
@@ -31,7 +32,7 @@ export default {
     mounted() {
 
         //create url for axios call
-        const url = this.store.api_url + this.store.api_profile + this.$route.params.slug
+        const url = this.store.api_url + "api/profile/" + this.$route.params.slug
 
         //use function for axios call 
         this.getSingleProfile(url)
@@ -46,8 +47,8 @@ export default {
             <div class="col">
                 <div class="card">
                     <div class="card-header">
-                        <h2>{{ store.singleProfile.name }} {{ store.singleProfile.surname }}</h2>
-                        <img :src="store.singleProfile.doctor_image" alt="">
+                        <h2>{{ store.singleProfile.user.name + " " + store.singleProfile.user.surname }}</h2>
+                        <img :src="url_image + store.singleProfile.doctor_image" alt="">
                     </div>
                     <div class="card-body">
                         <p>{{ store.singleProfile.phone_number }}</p>
@@ -72,7 +73,7 @@ export default {
                                 <p>{{ review.data }}</p>
                             </li>
                         </ul>
-                        <a  class="btn btn-primary" :href="store.api_url + store.singleProfile.cv" role="button">Button</a>
+                        <a class="btn btn-primary" :href="url_image + store.singleProfile.cv" role="button">Button</a>
                     </div>
                 </div>
             </div>

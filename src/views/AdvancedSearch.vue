@@ -74,7 +74,7 @@ export default {
         <div class="row">
             <div class="col">
                 <div class="mb-3 w-50">
-                    <label for="specializations" class="form-label fs-4 text-white">Specializations</label>
+                    <label for="specializations" class="form-label fs-4 ">Specializations</label>
                     <select v-model="selectedSpecialization" class="form-select form-select-lg text-dark"
                         name="specializations" id="specializations">
                         <option value="all">All</option>
@@ -85,12 +85,14 @@ export default {
                 </div>
                 <!-- start filter  -->
                 <div class="mb-3 w-50">
-                    <label for="filter" class="form-label fs-4 text-white">filter</label>
-                    <select class="form-select form-select-lg text-dark" name="filter" id="filter">
-                        <option>Order by number of Reviews asc</option>
-                        <option>Order by number of Reviews desc</option>
-                        <option>Order by average vote asc</option>
-                        <option>Order by average vote desc</option>
+                    <label for="vote" class="form-label fs-4 ">Filter by vote</label>
+                    <select class="form-select form-select-lg text-dark" name="vote" id="vote">
+                        <option></option>
+                        <option>⭐</option>
+                        <option>⭐⭐</option>
+                        <option>⭐⭐⭐</option>
+                        <option>⭐⭐⭐⭐</option>
+                        <option>⭐⭐⭐⭐⭐</option>
                     </select>
                 </div>
                 <button
