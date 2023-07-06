@@ -77,6 +77,7 @@ export default {
                             <div class="card-footer bg-primary">
                                 <h5 class="text-white">{{ profile.phone_number }}</h5>
                             </div>
+                            </router-link>
                     </div>
                     <!-- /card -->
                 </div>
