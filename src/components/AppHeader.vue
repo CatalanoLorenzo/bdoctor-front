@@ -11,7 +11,7 @@ export default {
             <nav class="navbar navbar-expand-md navbar-light bg-white">
                 <div class="container">
                     <div class="col-4">
-                        <a class="navbar-brand d-flex align-items-center" href="">
+                        <a class="navbar-brand d-flex align-items-center" href="/">
                             <div class="logo_laravel navbar-expand-sm px-2  px-sm-0">
                                 <div class="fadeIn ">
                                     <img class="w-75"
@@ -37,6 +37,9 @@ export default {
                                 <!-- Authentication Links -->
                                 <a class="btn" href="http://127.0.0.1:8000/login" role="button">Login</a>
                                 <a class="btn" href="http://127.0.0.1:8000/register" role="button">Register</a>
+                                <router-link :to="{ name: 'advanced-search' }">
+                                    Advanced Search
+                                </router-link>
                             </ul>
                         </div>
                     </div>

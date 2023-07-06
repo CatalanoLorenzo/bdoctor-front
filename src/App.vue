@@ -1,20 +1,19 @@
 <script>
 import AppHeader from './components/AppHeader.vue';
 import AppFooter from './components/AppFooter.vue';
-import HomeView from './views/HomeView.vue';
+
 
 export default {
     components: {
         AppHeader,
-        HomeView,
-        AppFooter
+        AppFooter,
     }
 }
 </script>
 
 <template>
     <AppHeader></AppHeader>
-    <HomeView></HomeView>
+    <router-view></router-view>
     <AppFooter></AppFooter>
 </template>
 
