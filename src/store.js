@@ -7,5 +7,6 @@ export const store = reactive({
     api_profile: 'api/profiles',
     api_specializations: 'api/specializations',
     profiles: [],
+    singleProfile: [],
     specializations: [],
 })

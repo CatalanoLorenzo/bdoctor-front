@@ -7,7 +7,7 @@ export default {
     components: {
         ProfileList,
         SingleProfile,
-    }
+        }
 
 }
 </script>
