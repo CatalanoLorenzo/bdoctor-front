@@ -16,13 +16,10 @@ export default {
                 .get(url)
                 .then(response => {
                     console.log(response);
-                    if (response.data.success) {
-                        this.store.singleProfile = response.data.profile;
-                    } else {
-                        this.$router.push({
-                            name: "pagenotfound404"
-                        });
-                    }
+
+                    this.store.singleProfile = response.data.profile;
+                    this.store.user = response.data.profile.user
+
                 })
                 .catch(error => {
                     console.error(error.message);
@@ -32,10 +29,12 @@ export default {
     mounted() {
 
         //create url for axios call
-        const url = this.store.api_url + "api/profile/" + this.$route.params.slug
 
+        const url = this.store.api_url + "api/profile/" + this.$route.params.slug
         //use function for axios call 
         this.getSingleProfile(url)
+
+
     }
 }
 
@@ -47,7 +46,7 @@ export default {
             <div class="col">
                 <div class="card">
                     <div class="card-header">
-                        <h2>{{ store.singleProfile.user.name + " " + store.singleProfile.user.surname }}</h2>
+                        <h2>{{ store.user.name }} {{ store.user.surname }} </h2>
                         <img :src="url_image + store.singleProfile.doctor_image" alt="">
                     </div>
                     <div class="card-body">
