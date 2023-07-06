@@ -8,63 +8,17 @@ export default {
     data() {
         return {
             store,
-            url_image: store.api_url + "storage/",
             url_profiles: store.api_url + store.api_profile,
             selectedSpecialization: ""
         };
     },
-    methods: {
-        getProfiles(url) {
-            axios.get(url).then(response => {
-                console.log(response);
-                store.profiles = response.data.results.data;
-                store.loading = false;
-            }).catch(error => {
-                console.log(error);
-                store.error = error.message
-            })
-        },
-        // API call Specializations
-        getSpecializations(url) {
-            axios.get(url).then(response => {
-                //console.log(response);
-                store.specializations = response.data.results;
-                store.loading = false;
-            }).catch(error => {
-                console.log(error);
-                store.error = error.message
-            })
-        },
-        // API call select specialization
-        /**
-         * 
-         * @param {String} param 
-         */
-        selectSpecialization(param) {
-            const specializationsUrl = store.api_url + store.api_profile;
-            // + '?specialization_id=' + this.selectedSpecialization
-            axios
-                .get(specializationsUrl, {
-                    params: { specialization_id: param }
-                })
-                .then((response) => {
-                    console.log(response);
-                    store.profiles = response.data.results;
-                    store.loading = false;
-                })
-                .catch((error) => {
-                    console.log(error);
-                    store.error = error.message;
-                });
-        },
-
-    }, mounted() {
+    mounted() {
         // call api specializations mounted
         console.log(this.url_profiles);
         this.selectedSpecialization = this.$route.query.specializationSelect;
         const url_specializations = store.api_url + store.api_specializations
-        this.getSpecializations(url_specializations);
-        this.selectSpecialization(this.$route.query.specializationSelect)
+        this.store.getSpecializations(url_specializations);
+        this.store.selectSpecialization(this.$route.query.specializationSelect)
     }
 };
 </script>
@@ -96,7 +50,7 @@ export default {
                     </select>
                 </div>
                 <button
-                    @click="this.selectedSpecialization == 'all' ? getProfiles(url_profiles) : selectSpecialization(this.selectedSpecialization)"
+                    @click="this.selectedSpecialization == 'all' ? store.getProfiles(url_profiles) : store.selectSpecialization(this.selectedSpecialization)"
                     type="button" class="btn btn-primary">
                     search
                 </button>

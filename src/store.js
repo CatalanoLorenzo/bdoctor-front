@@ -14,22 +14,27 @@ export const store = reactive({
     url_image: 'http://127.0.0.1:8000/storage/',
     //------------------Function--------------------------------
     // API call select specialization
-    selectSpecialization() {
-        const specializationsUrl = this.api_url + this.api_profile
-        // + '?specialization_id=' + this.selectedSpecialization
-        axios.get(specializationsUrl,
-            { params: { specialization_id: this.selectedSpecialization } }
-        ).then(response => {
-            console.log(response);
-            this.profiles = response.data.results;
-            this.loading = false;
-        }).catch(error => {
-            console.log(error);
-            this.error = error.message
-        })
-        console.log('prova');
-
-    },
+        /**
+         * 
+         * @param {String} param 
+         */
+        selectSpecialization(param) {
+            const specializationsUrl = store.api_url + store.api_profile;
+            // + '?specialization_id=' + this.selectedSpecialization
+            axios
+                .get(specializationsUrl, {
+                    params: { specialization_id: param }
+                })
+                .then((response) => {
+                    console.log(response);
+                    store.profiles = response.data.results;
+                    store.loading = false;
+                })
+                .catch((error) => {
+                    console.log(error);
+                    store.error = error.message;
+                });
+        },
     // API call Profiles
     getProfiles(url) {
         axios.get(url).then(response => {
