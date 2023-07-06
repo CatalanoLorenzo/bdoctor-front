@@ -9,6 +9,7 @@ export default {
         }
     },
     methods: {
+        //axios call database for get singleprofile data
         getSingleProfile(url) {
             axios
                 .get(url)
@@ -28,7 +29,11 @@ export default {
         },
     },
     mounted() {
+
+        //create url for axios call
         const url = this.store.api_url + this.store.api_profile + this.$route.params.slug
+
+        //use function for axios call 
         this.getSingleProfile(url)
     }
 }
