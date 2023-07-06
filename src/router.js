@@ -17,7 +17,7 @@ const router = createRouter({
       component: AdvancedSearch,
     },
     {
-      path: "/single-profile",
+      path: "/single-profile/:slug",
       name: "single-profile",
       component: SingleProfile,
     },
