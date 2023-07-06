@@ -9,10 +9,21 @@ export default {
         return {
             store,
             url_image: store.api_url + "storage/",
+            url_profiles: store.api_url + store.api_profile,
             selectedSpecialization: ""
         };
     },
     methods: {
+        getProfiles(url) {
+            axios.get(url).then(response => {
+                console.log(response);
+                store.profiles = response.data.results.data;
+                store.loading = false;
+            }).catch(error => {
+                console.log(error);
+                store.error = error.message
+            })
+        },
         // API call Specializations
         getSpecializations(url) {
             axios.get(url).then(response => {
@@ -45,12 +56,11 @@ export default {
                     console.log(error);
                     store.error = error.message;
                 });
-            console.log(this.selectedSpecialization);
-            console.log(this.$route.query.specializationSelect);
         },
 
     }, mounted() {
         // call api specializations mounted
+        console.log(this.url_profiles);
         this.selectedSpecialization = this.$route.query.specializationSelect;
         const url_specializations = store.api_url + store.api_specializations
         this.getSpecializations(url_specializations);
@@ -67,6 +77,7 @@ export default {
                     <label for="specializations" class="form-label fs-4 text-white">Specializations</label>
                     <select v-model="selectedSpecialization" class="form-select form-select-lg text-dark"
                         name="specializations" id="specializations">
+                        <option value="all">All</option>
                         <option v-for="specialization in store.specializations" :value="specialization.id">
                             {{ specialization.name }}
                         </option>
@@ -82,7 +93,9 @@ export default {
                         <option>Order by average vote desc</option>
                     </select>
                 </div>
-                <button @click="selectSpecialization(this.selectedSpecialization)" type="button" class="btn btn-primary">
+                <button
+                    @click="this.selectedSpecialization == 'all' ? getProfiles(url_profiles) : selectSpecialization(this.selectedSpecialization)"
+                    type="button" class="btn btn-primary">
                     search
                 </button>
             </div>
