@@ -1,40 +1,15 @@
 <script>
 import { store } from '../store';
-import axios from 'axios';
 export default {
     name: "JumboTron",
     data() {
-
-
         return {
             store,
-            url_image: store.api_url + 'storage/',
             selectedSpecialization: '',
-        }
-    },
-    methods: {
-
-        // API call select specialization
-        selectSpecialization() {
-            const specializationsUrl = store.api_url + store.api_profile
-            // + '?specialization_id=' + this.selectedSpecialization
-            axios.get(specializationsUrl,
-                { params: { specialization_id: this.selectedSpecialization } }
-            ).then(response => {
-                console.log(response);
-                store.profiles = response.data.results;
-                store.loading = false;
-            }).catch(error => {
-                console.log(error);
-                store.error = error.message
-            })
-            console.log('prova');
-
         }
     }
 }
 </script>
-
 <template>
     <div class="jumbotron p-5 mb-4">
         <div class="container-fluid py-5">
@@ -56,6 +31,3 @@ export default {
         </div>
     </div>
 </template>
-
-
-<style lang="scss" scoped></style>

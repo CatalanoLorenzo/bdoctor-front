@@ -7,7 +7,6 @@ export default {
         idSpecialization: String
       },
       store,
-      url_image: store.api_url + "storage/"
     };
   }
 };
@@ -20,7 +19,7 @@ export default {
       <div v-for="profile in store.profiles" class="col my-3">
         <div class="doctor_card card h-100">
           <img class="card-img-top ratio-1x1 object-fit-cover" height="300" width="300"
-            :src="url_image + profile.doctor_image" :alt="profile.slug" />
+            :src="store.url_image + profile.doctor_image" :alt="profile.slug" />
           <div class="card-body">
             <h4 class="card-title">
               {{ profile.user.name + " " + profile.user.surname }}
@@ -38,5 +37,3 @@ export default {
     </div>
   </div>
 </template>
-
-<style lang="scss" scoped></style>
