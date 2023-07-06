@@ -47,7 +47,7 @@ export default {
                 <div class="card">
                     <div class="card-header">
                         <h2>{{ store.user.name }} {{ store.user.surname }} </h2>
-                        <img :src="url_image + store.singleProfile.doctor_image" alt="">
+                        <img class="img-fluid" :src="url_image + store.singleProfile.doctor_image" alt="">
                     </div>
                     <div class="card-body">
                         <p>{{ store.singleProfile.phone_number }}</p>
