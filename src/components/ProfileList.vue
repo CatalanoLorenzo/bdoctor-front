@@ -1,12 +1,9 @@
 <script>
 import { store } from '../store';
-import JumboTron from './JumboTron.vue';
 import axios from 'axios';
 export default {
     name: "ProfileList",
-    components: {
-        JumboTron
-    },
+   
     data() {
         return {
             store,
