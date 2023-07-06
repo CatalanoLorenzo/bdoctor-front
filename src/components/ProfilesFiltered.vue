@@ -17,7 +17,6 @@ export default {
   <!-- card -->
   <div class="container">
     <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3">
-      <h1> {{ idSpecialization }}</h1>
       <div v-for="profile in store.profiles" class="col my-3">
         <div class="doctor_card card h-100">
           <img class="card-img-top ratio-1x1 object-fit-cover" height="300" width="300"

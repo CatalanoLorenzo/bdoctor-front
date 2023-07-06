@@ -9,10 +9,21 @@ export default {
         return {
             store,
             url_image: store.api_url + "storage/",
+            url_profiles: store.api_url + store.api_profile,
             selectedSpecialization: ""
         };
     },
     methods: {
+        getProfiles(url) {
+            axios.get(url).then(response => {
+                console.log(response);
+                store.profiles = response.data.results.data;
+                store.loading = false;
+            }).catch(error => {
+                console.log(error);
+                store.error = error.message
+            })
+        },
         // API call Specializations
         getSpecializations(url) {
             axios.get(url).then(response => {
@@ -45,12 +56,11 @@ export default {
                     console.log(error);
                     store.error = error.message;
                 });
-            console.log(this.selectedSpecialization);
-            console.log(this.$route.query.specializationSelect);
         },
 
     }, mounted() {
         // call api specializations mounted
+        console.log(this.url_profiles);
         this.selectedSpecialization = this.$route.query.specializationSelect;
         const url_specializations = store.api_url + store.api_specializations
         this.getSpecializations(url_specializations);
@@ -64,9 +74,10 @@ export default {
         <div class="row">
             <div class="col">
                 <div class="mb-3 w-50">
-                    <label for="specializations" class="form-label fs-4 text-white">Specializations</label>
+                    <label for="specializations" class="form-label fs-4 ">Specializations</label>
                     <select v-model="selectedSpecialization" class="form-select form-select-lg text-dark"
                         name="specializations" id="specializations">
+                        <option value="all">All</option>
                         <option v-for="specialization in store.specializations" :value="specialization.id">
                             {{ specialization.name }}
                         </option>
@@ -74,15 +85,19 @@ export default {
                 </div>
                 <!-- start filter  -->
                 <div class="mb-3 w-50">
-                    <label for="filter" class="form-label fs-4 text-white">filter</label>
-                    <select class="form-select form-select-lg text-dark" name="filter" id="filter">
-                        <option>Order by number of Reviews asc</option>
-                        <option>Order by number of Reviews desc</option>
-                        <option>Order by average vote asc</option>
-                        <option>Order by average vote desc</option>
+                    <label for="vote" class="form-label fs-4 ">Filter by vote</label>
+                    <select class="form-select form-select-lg text-dark" name="vote" id="vote">
+                        <option></option>
+                        <option>⭐</option>
+                        <option>⭐⭐</option>
+                        <option>⭐⭐⭐</option>
+                        <option>⭐⭐⭐⭐</option>
+                        <option>⭐⭐⭐⭐⭐</option>
                     </select>
                 </div>
-                <button @click="selectSpecialization(this.selectedSpecialization)" type="button" class="btn btn-primary">
+                <button
+                    @click="this.selectedSpecialization == 'all' ? getProfiles(url_profiles) : selectSpecialization(this.selectedSpecialization)"
+                    type="button" class="btn btn-primary">
                     search
                 </button>
             </div>

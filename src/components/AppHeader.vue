@@ -37,9 +37,6 @@ export default {
                                 <!-- Authentication Links -->
                                 <a class="btn" href="http://127.0.0.1:8000/login" role="button">Login</a>
                                 <a class="btn" href="http://127.0.0.1:8000/register" role="button">Register</a>
-                                <router-link :to="{ name: 'advanced-search' }">
-                                    Advanced Search
-                                </router-link>
                             </ul>
                         </div>
                     </div>
