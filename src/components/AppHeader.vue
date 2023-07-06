@@ -33,9 +33,10 @@ export default {
                         <div class="collapse navbar-collapse" id="navbarSupportedContent">
 
                             <!-- Right Side Of Navbar -->
-                            <ul class="navbar-nav ml-auto align-content-end">
+                            <ul class="navbar-nav ml-auto align-content-end gap-2">
                                 <!-- Authentication Links -->
-
+                                <a class="btn" href="http://127.0.0.1:8000/login" role="button">Login</a>
+                                <a class="btn" href="http://127.0.0.1:8000/register" role="button">Register</a>
                             </ul>
                         </div>
                     </div>
