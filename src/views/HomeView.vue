@@ -18,6 +18,3 @@ export default {
     <JumboTron></JumboTron>
     <ProfileList></ProfileList>
 </template>
-
-
-<style lang="scss" scoped></style>
