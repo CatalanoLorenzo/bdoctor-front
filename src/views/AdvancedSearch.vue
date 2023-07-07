@@ -100,9 +100,9 @@ export default {
             id="review"
           >
             <option value="all">All</option>
-            <option value="1">>1</option>
-            <option value="2">tra 2 e 4</option>
-            <option value="3">maggiore di 4+</option>
+            <option value="1">-2 </option>
+            <option value="2">tra 2 e 5</option>
+            <option value="3">5+</option>
           </select>
         </div>
 
