@@ -1,48 +1,25 @@
 <script>
-
+import FooterTop from "./FooterTop.vue";
+import FooterBottom from "./FooterBottom.vue";
 export default {
-    name: "AppFooter",
-}
+  name: "AppFooter",
+  components: { FooterTop, FooterBottom }
+};
 </script>
 
 <template>
-    <footer class="py-5 mt-5 border-top appFooter">
-
-        <div class="container">
-            <div class="row">
-                <div class="col mb-3">
-
-                </div>
-
-                <div class="col mb-3">
-                    <h5>Values</h5>
-                    <ul class="nav flex-column">
-                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Privacy & Cookie</a></li>
-                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">About</a></li>
-                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Contacts</a></li>
-                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">FAQs</a></li>
-                    </ul>
-                </div>
-
-                <div class="col mb-3">
-                    <h5>Business</h5>
-                    <ul class="nav flex-column">
-                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Features</a></li>
-                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Pricing</a></li>
-                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Work with us</a></li>
-                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">App Mobile</a></li>
-                    </ul>
-                </div>
-
-                <div class="col mb-3 last_col">
-                    <h5>Profiles</h5>
-                    <ul class="nav flex-column">
-                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Doctors</a></li>
-                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Patients</a></li>
-                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Customer Care</a></li>
-                    </ul>
-                </div>
-            </div>
+  <footer class="appFooter">
+    <div class="test">
+      <div class="footer">
+        <div class="waves">
+          <div class="wave" id="wave1"></div>
+          <div class="wave" id="wave2"></div>
+          <div class="wave" id="wave3"></div>
+          <div class="wave" id="wave4"></div>
         </div>
-    </footer>
+      </div>
+    </div>
+    <FooterTop></FooterTop>
+    <FooterBottom></FooterBottom>
+  </footer>
 </template>

@@ -1,9 +1,10 @@
 // Import all of Bootstrap's CSS
 @import "/node_modules/bootstrap/scss/bootstrap";
-@import './partials/appHeader';
-@import './partials/jumbo';
-@import './partials/doctor_card';
+@import "./partials/appHeader";
+@import "./partials/jumbo";
+@import "./partials/doctor_card";
+@import "./partials/appFooter";
 
 body {
-    overflow-x: hidden;
+  overflow-x: hidden;
 }
