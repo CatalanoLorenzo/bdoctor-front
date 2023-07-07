@@ -138,34 +138,37 @@ export default {
   </div> -->
   <div class="container">
     <div class="row">
-      <div class="col-12 bg-light-gray mt-5 shadow-lg rounded-5">
-        <div class="d-flex">
-          <div class="h-25 w-25 mt-5">
+      <div class="col-12 bg-light-gray mt-5 shadow-lg rounded-4 p-4">
+        <div class="d-flex flex-wrap align-items-center">
+          <div class="h-25 w-25 mx-5">
             <img
               class="img-fluid rounded-5"
               :src="store.url_image + store.singleProfile.doctor_image"
               alt=""
             />
           </div>
-          <div class="ms-3">
+          <div class="flex-grow-1">
             <h2>{{ store.user.name }} {{ store.user.surname }}</h2>
-            <ul class="list-unstyled">
-              <li v-for="specialization in store.singleProfile.specializations">
+            <ul class="list-inline mb-0">
+              <li
+                v-for="specialization in store.singleProfile.specializations"
+                class="list-inline-item me-2"
+              >
                 {{ specialization.name }}
               </li>
             </ul>
-            <p>{{ store.singleProfile.phone_number }}</p>
-            <p>{{ store.singleProfile.address }}</p>
-            <p>{{ store.user.email }}</p>
-            <p>{{ store.singleProfile.performances }}</p>
+            <p class="mb-1">{{ store.singleProfile.phone_number }}</p>
+            <p class="mb-1">{{ store.singleProfile.address }}</p>
+            <p class="mb-1">{{ store.user.email }}</p>
+            <p class="mb-1">{{ store.singleProfile.performances }}</p>
             <a
-              class="btn btn-primary"
+              class="btn btn-primary mt-3"
               v-show="store.singleProfile.cv"
               :href="store.url_image + store.singleProfile.cv"
               role="button"
               >PDF</a
             >
-            <div class="col">
+            <div class="col mt-3">
               <button
                 type="button"
                 class="btn btn-primary btn-lg"
@@ -225,8 +228,29 @@ export default {
     </div>
     <!-- profile info Doctor -->
     <div class="row mt-4">
-      <div class="col-4 bg-light-gray shadow-lg rounded-5 p-4">
-        <p class="text-dark-gray">Stars</p>
+      <div class="col-4 bg-light-gray shadow-lg rounded-4">
+        <p class="text-dark-gray"></p>
+
+        <form :action="store.api_url + 'api/votes/'" method="POST">
+          <div class="mb-3">
+            <input
+              type="hidden"
+              :value="store.singleProfile.id"
+              name="profile_id"
+            />
+            <input type="hidden" :value="'2023-07-07 15:30:00'" name="time" />
+            <label for="vote" class="form-label">stars</label>
+            <select class="form-select form-select-lg" name="vote" id="vote">
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+            </select>
+          </div>
+          <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+
         <ul v-show="store.singleProfile.votes">
           <li v-for="vote in store.singleProfile.votes">
             {{ vote.vote }}
@@ -236,14 +260,14 @@ export default {
       <div class="col-8">
         <div class="container bg-light-gray px-0 mx-0">
           <div class="row flex-column">
-            <div class="col bg-lighter-gray shadow-lg rounded-5">
+            <div class="col bg-lighter-gray shadow-lg rounded-4">
               <div class="p-4">
                 <p>Ricorda modifiche: togliere sezione email</p>
                 <ReviewDoctor></ReviewDoctor>
               </div>
             </div>
             <!-- review doctor -->
-            <div class="col bg-lighter-gray shadow-lg rounded-5 mt-3">
+            <div class="col bg-lighter-gray shadow-lg rounded-4 mt-3">
               <p class="text-dark-gray">Reviews ricevute</p>
               <ul v-show="store.singleProfile.reviews">
                 <li v-for="review in store.singleProfile.reviews">
