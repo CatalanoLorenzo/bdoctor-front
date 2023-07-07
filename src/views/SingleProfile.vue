@@ -10,7 +10,9 @@ export default {
   },
   data() {
     return {
-      store
+      store,
+      vote: null,
+      hoverVote: null
     };
   },
   mounted() {
@@ -20,6 +22,30 @@ export default {
     const url = this.store.api_url + "api/profile/" + this.$route.params.slug;
     //use function for axios call
     this.store.getSingleProfile(url);
+  },
+  methods:{
+    setHoverVote: function (vote) {
+      this.hoverVote = vote;
+    },
+    clearHoverVote: function () {
+      this.hoverVote = null;
+    },
+    openConfirmationModal: function (vote) {
+      this.vote = vote;
+      this.$refs.confirmationModal.classList.add('show');
+      this.$refs.confirmationModal.style.display = 'block';
+    },
+    closeConfirmationModal: function () {
+      this.$refs.confirmationModal.classList.remove('show');
+      this.$refs.confirmationModal.style.display = 'none';
+    },
+    submitVote: function () {
+      // Qui puoi aggiungere la logica per inviare il voto al backend
+      console.log('Voto inviato:', this.vote);
+
+      // Chiudi la modale di conferma
+      this.closeConfirmationModal();
+    }
   }
 };
 </script>
@@ -198,21 +224,40 @@ export default {
         <p class="text-dark-gray"></p>
 
         <form :action="store.api_url + 'api/votes/'" method="POST">
-          <div class="mb-3">
-            <input type="hidden" :value="store.singleProfile.id" name="profile_id" />
-            <input type="hidden" :value="'2023-07-07 15:30:00'" name="time" />
-            <label for="vote" class="form-label">stars</label>
-            <input type="hidden" :value="store.singleProfile.slug" name="slug" />
-            <select class="form-select form-select-lg" name="vote" id="vote">
-              <option value="1">1</option>
-              <option value="2">2</option>
-              <option value="3">3</option>
-              <option value="4">4</option>
-              <option value="5">5</option>
-            </select>
+      <div class="mb-3">
+        <input type="hidden" :value="store.singleProfile.id" name="profile_id" />
+        <input type="hidden" :value="'2023-07-07 15:30:00'" name="time" />
+        <input type="hidden" name="vote" :value="vote">
+        <input type="hidden" name="slug" :value="store.singleProfile.slug">
+        <span v-for="i in 5" :key="i" class="rating-star" @click="openConfirmationModal(i)" @mouseover="setHoverVote(i)"
+          @mouseout="clearHoverVote">
+          <i :class="[hoverVote >= i ? 'fas' : 'far', 'fa-star']"></i>
+        </span>
+      </div>
+
+      <!-- Modale di conferma voto -->
+      <div class="modal" ref="confirmationModal" @click.self="closeConfirmationModal">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title">Conferma voto</h5>
+              <button type="button" class="close" data-dismiss="modal" @click="closeConfirmationModal">
+                <span>&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <p>Do you want to send this vote?</p>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal"
+                @click="closeConfirmationModal">Annulla</button>
+              <button type="submit" class="btn btn-primary">Yes</button>
+            </div>
           </div>
-          <button type="submit" class="btn btn-primary">Submit</button>
-        </form>
+        </div>
+      </div>
+    </form>
+
 
         <ul v-show="store.singleProfile.votes">
           <li v-for="vote in store.singleProfile.votes">
