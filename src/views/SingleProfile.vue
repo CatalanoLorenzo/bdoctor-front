@@ -141,19 +141,12 @@ export default {
       <div class="col-12 bg-light-gray mt-5 shadow-lg rounded-4 p-4">
         <div class="d-flex flex-wrap align-items-center">
           <div class="h-25 w-25 mx-5">
-            <img
-              class="img-fluid rounded-5"
-              :src="store.url_image + store.singleProfile.doctor_image"
-              alt=""
-            />
+            <img class="img-fluid rounded-5" :src="store.url_image + store.singleProfile.doctor_image" alt="" />
           </div>
           <div class="flex-grow-1">
             <h2>{{ store.user.name }} {{ store.user.surname }}</h2>
             <ul class="list-inline mb-0">
-              <li
-                v-for="specialization in store.singleProfile.specializations"
-                class="list-inline-item me-2"
-              >
+              <li v-for="specialization in store.singleProfile.specializations" class="list-inline-item me-2">
                 {{ specialization.name }}
               </li>
             </ul>
@@ -161,56 +154,29 @@ export default {
             <p class="mb-1">{{ store.singleProfile.address }}</p>
             <p class="mb-1">{{ store.user.email }}</p>
             <p class="mb-1">{{ store.singleProfile.performances }}</p>
-            <a
-              class="btn btn-primary mt-3"
-              v-show="store.singleProfile.cv"
-              :href="store.url_image + store.singleProfile.cv"
-              role="button"
-              >PDF</a
-            >
+            <a class="btn btn-primary mt-3" v-show="store.singleProfile.cv"
+              :href="store.url_image + store.singleProfile.cv" role="button">PDF</a>
+
+            <!-- Modal -->
             <div class="col mt-3">
-              <button
-                type="button"
-                class="btn btn-primary btn-lg"
-                data-bs-toggle="modal"
-                data-bs-target="#modalId"
-              >
+              <button type="button" class="btn btn-primary btn-lg" data-bs-toggle="modal" data-bs-target="#modalId">
                 Send Message to Doctor
               </button>
-              <div
-                class="modal fade"
-                id="modalId"
-                tabindex="-1"
-                data-bs-backdrop="static"
-                data-bs-keyboard="false"
-                role="dialog"
-                aria-labelledby="modalTitleId"
-                aria-hidden="true"
-              >
-                <div
-                  class="modal-dialog modal-xl modal-fullscreen-sm-down modal-dialog-scrollable modal-dialog-centered"
-                  role="document"
-                >
+              <div class="modal fade" id="modalId" tabindex="-1" data-bs-backdrop="static" data-bs-keyboard="false"
+                role="dialog" aria-labelledby="modalTitleId" aria-hidden="true">
+                <div class="modal-dialog modal-xl modal-fullscreen-sm-down modal-dialog-scrollable modal-dialog-centered"
+                  role="document">
                   <div class="modal-content">
                     <div class="modal-header">
                       <h5>Scrivi un messaggio al Dottore</h5>
-                      <button
-                        type="button"
-                        class="btn-close"
-                        data-bs-dismiss="modal"
-                        aria-label="Close"
-                      ></button>
+                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <form action="" method="get">
                       <div class="modal-body">
                         <MessageDoctor></MessageDoctor>
                       </div>
                       <div class="modal-footer">
-                        <button
-                          type="button"
-                          class="btn btn-secondary"
-                          data-bs-dismiss="modal"
-                        >
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
                           Close
                         </button>
                         <button type="submit" class="btn btn-primary">
@@ -233,13 +199,10 @@ export default {
 
         <form :action="store.api_url + 'api/votes/'" method="POST">
           <div class="mb-3">
-            <input
-              type="hidden"
-              :value="store.singleProfile.id"
-              name="profile_id"
-            />
+            <input type="hidden" :value="store.singleProfile.id" name="profile_id" />
             <input type="hidden" :value="'2023-07-07 15:30:00'" name="time" />
             <label for="vote" class="form-label">stars</label>
+            <input type="hidden" :value="store.singleProfile.slug" name="slug" />
             <select class="form-select form-select-lg" name="vote" id="vote">
               <option value="1">1</option>
               <option value="2">2</option>
@@ -263,6 +226,8 @@ export default {
             <div class="col bg-lighter-gray shadow-lg rounded-4">
               <div class="p-4">
                 <p>Ricorda modifiche: togliere sezione email</p>
+
+                <!-- Review Component -->
                 <ReviewDoctor></ReviewDoctor>
               </div>
             </div>
