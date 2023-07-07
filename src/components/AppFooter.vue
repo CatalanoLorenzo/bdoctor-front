@@ -8,7 +8,7 @@ export default {
 </script>
 
 <template>
-  <footer class="py-5 mt-5 appFooter">
+  <footer class="appFooter">
     <div class="test">
       <div class="footer">
         <div class="waves">
