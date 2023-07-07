@@ -136,20 +136,18 @@ export default {
       </div>
     </div>
   </div> -->
-
-  <div class="container mt-5">
+  <div class="container">
     <div class="row">
-      <div class="col-12 bg-info">
-        <div class="card-header d-flex">
-          <div class="rounded h-25 w-25">
+      <div class="col-12 bg-light-gray mt-5 shadow-lg rounded-5">
+        <div class="d-flex">
+          <div class="h-25 w-25 mt-5">
             <img
-              class="img-fluid"
+              class="img-fluid rounded-5"
               :src="store.url_image + store.singleProfile.doctor_image"
               alt=""
             />
           </div>
-
-          <div>
+          <div class="ms-3">
             <h2>{{ store.user.name }} {{ store.user.surname }}</h2>
             <ul class="list-unstyled">
               <li v-for="specialization in store.singleProfile.specializations">
@@ -160,7 +158,6 @@ export default {
             <p>{{ store.singleProfile.address }}</p>
             <p>{{ store.user.email }}</p>
             <p>{{ store.singleProfile.performances }}</p>
-
             <a
               class="btn btn-primary"
               v-show="store.singleProfile.cv"
@@ -177,7 +174,6 @@ export default {
               >
                 Send Message to Doctor
               </button>
-
               <div
                 class="modal fade"
                 id="modalId"
@@ -194,7 +190,7 @@ export default {
                 >
                   <div class="modal-content">
                     <div class="modal-header">
-                      <h5>Scrivi un messagio al Dottore</h5>
+                      <h5>Scrivi un messaggio al Dottore</h5>
                       <button
                         type="button"
                         class="btn-close"
@@ -228,10 +224,9 @@ export default {
       </div>
     </div>
     <!-- profile info Doctor -->
-
-    <div class="row">
-      <div class="col-4 bg-success">
-        <p>stars</p>
+    <div class="row mt-4">
+      <div class="col-4 bg-light-gray shadow-lg rounded-5 p-4">
+        <p class="text-dark-gray">Stars</p>
         <ul v-show="store.singleProfile.votes">
           <li v-for="vote in store.singleProfile.votes">
             {{ vote.vote }}
@@ -239,23 +234,17 @@ export default {
         </ul>
       </div>
       <div class="col-8">
-        <div class="container bg-dark px-0 mx-0">
+        <div class="container bg-light-gray px-0 mx-0">
           <div class="row flex-column">
-            <div class="col bg-danger">
-              <div class="card-footer">
-                <div class="container">
-                  <div class="row flex-column">
-                    <div class="col">
-                      <p>ricorda modifiche: togliere sezione email</p>
-                      <ReviewDoctor></ReviewDoctor>
-                    </div>
-                  </div>
-                </div>
+            <div class="col bg-lighter-gray shadow-lg rounded-5">
+              <div class="p-4">
+                <p>Ricorda modifiche: togliere sezione email</p>
+                <ReviewDoctor></ReviewDoctor>
               </div>
-              <!-- review doctor -->
             </div>
-            <div class="col bg-info">
-              <p>reviews ricevute</p>
+            <!-- review doctor -->
+            <div class="col bg-lighter-gray shadow-lg rounded-5 mt-3">
+              <p class="text-dark-gray">Reviews ricevute</p>
               <ul v-show="store.singleProfile.reviews">
                 <li v-for="review in store.singleProfile.reviews">
                   <p>{{ review.name }} {{ review.surname }}</p>
