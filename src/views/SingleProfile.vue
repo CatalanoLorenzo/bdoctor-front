@@ -168,68 +168,58 @@ export default {
               role="button"
               >PDF</a
             >
-          </div>
-        </div>
-      </div>
-    </div>
-    <!-- profile info Doctor -->
-    <div class="card-footer">
-      <div class="container">
-        <div class="row flex-column">
-          <div class="col">
-            <ReviewDoctor></ReviewDoctor>
-          </div>
-          <div class="col">
-            <button
-              type="button"
-              class="btn btn-primary btn-lg"
-              data-bs-toggle="modal"
-              data-bs-target="#modalId"
-            >
-              Send Message to Doctor
-            </button>
-
-            <div
-              class="modal fade"
-              id="modalId"
-              tabindex="-1"
-              data-bs-backdrop="static"
-              data-bs-keyboard="false"
-              role="dialog"
-              aria-labelledby="modalTitleId"
-              aria-hidden="true"
-            >
-              <div
-                class="modal-dialog modal-xl modal-fullscreen-sm-down modal-dialog-scrollable modal-dialog-centered"
-                role="document"
+            <div class="col">
+              <button
+                type="button"
+                class="btn btn-primary btn-lg"
+                data-bs-toggle="modal"
+                data-bs-target="#modalId"
               >
-                <div class="modal-content">
-                  <div class="modal-header">
-                    <h5>Scrivi un messagio al Dottore</h5>
-                    <button
-                      type="button"
-                      class="btn-close"
-                      data-bs-dismiss="modal"
-                      aria-label="Close"
-                    ></button>
-                  </div>
-                  <form action="" method="get">
-                    <div class="modal-body">
-                      <MessageDoctor></MessageDoctor>
-                    </div>
-                    <div class="modal-footer">
+                Send Message to Doctor
+              </button>
+
+              <div
+                class="modal fade"
+                id="modalId"
+                tabindex="-1"
+                data-bs-backdrop="static"
+                data-bs-keyboard="false"
+                role="dialog"
+                aria-labelledby="modalTitleId"
+                aria-hidden="true"
+              >
+                <div
+                  class="modal-dialog modal-xl modal-fullscreen-sm-down modal-dialog-scrollable modal-dialog-centered"
+                  role="document"
+                >
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5>Scrivi un messagio al Dottore</h5>
                       <button
                         type="button"
-                        class="btn btn-secondary"
+                        class="btn-close"
                         data-bs-dismiss="modal"
-                      >
-                        Close
-                      </button>
-                      <button type="submit" class="btn btn-primary">
-                        Send
-                      </button>
+                        aria-label="Close"
+                      ></button>
                     </div>
-                  </form>
+                    <form action="" method="get">
+                      <div class="modal-body">
+                        <MessageDoctor></MessageDoctor>
+                      </div>
+                      <div class="modal-footer">
+                        <button
+                          type="button"
+                          class="btn btn-secondary"
+                          data-bs-dismiss="modal"
+                        >
+                          Close
+                        </button>
+                        <button type="submit" class="btn btn-primary">
+                          Send
+                        </button>
+                      </div>
+                    </form>
+                  </div>
                 </div>
               </div>
             </div>
@@ -237,7 +227,8 @@ export default {
         </div>
       </div>
     </div>
-    <!-- review doctor -->
+    <!-- profile info Doctor -->
+
     <div class="row">
       <div class="col-4 bg-success">
         <p>stars</p>
@@ -251,7 +242,17 @@ export default {
         <div class="container bg-dark px-0 mx-0">
           <div class="row flex-column">
             <div class="col bg-danger">
-              <p>form per invio recensione</p>
+              <div class="card-footer">
+                <div class="container">
+                  <div class="row flex-column">
+                    <div class="col">
+                      <p>ricorda modifiche: togliere sezione email</p>
+                      <ReviewDoctor></ReviewDoctor>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- review doctor -->
             </div>
             <div class="col bg-info">
               <p>reviews ricevute</p>
