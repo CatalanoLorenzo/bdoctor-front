@@ -1,17 +1,16 @@
 <script>
 import { store } from "../store";
 export default {
+  props: {
+    idSpecialization: String
+  },
   data() {
     return {
-      props: {
-        idSpecialization: String
-      },
       store,
     };
   }
 };
 </script>
-
 <template>
   <!-- card -->
   <div class="container">

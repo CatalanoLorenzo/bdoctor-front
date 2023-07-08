@@ -16,23 +16,23 @@ export const store = reactive({
     // API call select specialization
         /**
          * 
-         * @param {String} param 
+         * @param {String} value 
          */
-        selectSpecialization(param) {
+        selectSpecialization(value) {
             const specializationsUrl = store.api_url + store.api_profile;
-            // + '?specialization_id=' + this.selectedSpecialization
             axios
                 .get(specializationsUrl, {
-                    params: { specialization_id: param }
+                    params: { specialization_id: value }
                 })
                 .then((response) => {
                     console.log(response);
-                    store.profiles = response.data.results;
-                    store.loading = false;
+                    this.profiles = response.data.results;
+                    console.log(this.profiles);
+                    this.loading = false;
                 })
                 .catch((error) => {
                     console.log(error);
-                    store.error = error.message;
+                    this.error = error.message;
                 });
         },
     // API call Profiles
