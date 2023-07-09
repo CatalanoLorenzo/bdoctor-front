@@ -28,7 +28,7 @@ export default {
                     },
                 })
                 .then((response) => {
-                    console.log(response);
+                    //console.log(response);
                     store.profiles = response.data.results;
                     store.loading = false;
                 })
@@ -57,9 +57,7 @@ export default {
                 <StarFilter ref="selectedVote"></StarFilter>
                 <!-- review filter -->
                 <ReviewFilter ref="selectedReview"></ReviewFilter>
-                <button @click="conditionSelecSpecialization()" type="button" class="btn btn-primary">
-                    search
-                </button>
+                <button @click="conditionSelecSpecialization()" type="button" class="btn btn-primary">search</button>
             </div>
         </div>
     </div>
