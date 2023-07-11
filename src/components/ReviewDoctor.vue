@@ -12,6 +12,7 @@ export default {
 </script>
 <template>
   <div>
+    <h3>Add a Review</h3>
     <form :action="store.api_url + 'api/reviews/'" method="post">
       <input type="hidden" :value="store.singleProfile.id" name="profile_id" />
       <input type="hidden" :value="'2023-07-07 15:30:00'" name="date" />
