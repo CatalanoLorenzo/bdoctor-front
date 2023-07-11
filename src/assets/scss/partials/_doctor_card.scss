@@ -1,1 +1,6 @@
 @use './variables.scss' as *;
+
+.last_reviews {
+    height: 300px;
+    overflow-y: scroll;
+}
