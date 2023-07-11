@@ -9,13 +9,13 @@ export default {
 
 <template>
   <footer class="appFooter">
-    <div class="test">
-      <div class="footer">
+    <div class="test d-flex justify-content-end align-items-end">
+      <div class="footer position-relative w-100 d-flex justify-content-center align-content-center flex-column">
         <div class="waves">
-          <div class="wave" id="wave1"></div>
-          <div class="wave" id="wave2"></div>
-          <div class="wave" id="wave3"></div>
-          <div class="wave" id="wave4"></div>
+          <div class="wave position-absolute w-100 z-3" id="wave1"></div>
+          <div class="wave position-absolute w-100 z-3" id="wave2"></div>
+          <div class="wave position-absolute w-100 z-3" id="wave3"></div>
+          <div class="wave position-absolute w-100 z-3" id="wave4"></div>
         </div>
       </div>
     </div>

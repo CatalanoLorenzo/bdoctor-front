@@ -5,8 +5,8 @@ export default {
 </script>
 
 <template>
-  <div class="test">
-    <footer class="footer">
+  <div class="test  d-flex justify-content-end align-items-end">
+    <footer class="footer  position-relative w-100 d-flex justify-content-center align-content-center flex-column">
       <div class="container">
         <div class="row">
           <div class="col-3">
@@ -30,10 +30,10 @@ export default {
             <h5>1 h5ermettere ai medici di registrarsi alla h5iattaforma</h5>
           </div>
           <div class="col-5">
-            <ul class="menu">
+            <ul class="menu position-relative d-flex justify-content-center align-items-center m-0 flex-wrap list-unstyled">
               <li class="menu__item p-1">
                 <a
-                  class="menu__link"
+                  class="menu__link d-flex align-items-start"
                   href="https://github.com/Francesco-Iannuzzi"
                 >
                   <img
@@ -44,7 +44,7 @@ export default {
                 </a>
               </li>
               <li class="menu__item p-1">
-                <a class="menu__link" href="https://github.com/MarioBlasi">
+                <a class="menu__link d-flex align-items-start" href="https://github.com/MarioBlasi">
                   <img
                     src="https://www.dottorelondon.com/app/uploads/2015/12/doctor1.png"
                     alt="Mario Blasi"
@@ -53,7 +53,7 @@ export default {
                 </a>
               </li>
               <li class="menu__item p-1">
-                <a class="menu__link" href="https://github.com/CatalanoLorenzo">
+                <a class="menu__link d-flex align-items-start" href="https://github.com/CatalanoLorenzo">
                   <img
                     src="https://www.dottorelondon.com/app/uploads/2017/05/laura-ferrara-dottore-london.jpg"
                     alt="Lorenzo Catalano"
@@ -61,9 +61,9 @@ export default {
                   <p>Lorenzo</p>
                 </a>
               </li>
-              <li class="menu__item p-1">
+              <li class="menu__item p-1 list-unstyled">
                 <a
-                  class="menu__link"
+                  class="menu__link d-flex align-items-start"
                   href="https://github.com/giuseppevignanello"
                 >
                   <img
@@ -75,7 +75,7 @@ export default {
               </li>
               <li class="menu__item p-1">
                 <a
-                  class="menu__link"
+                  class="menu__link d-flex align-items-start"
                   href="https://github.com/AlexandroFioretti1"
                 >
                   <img
