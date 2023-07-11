@@ -23,7 +23,7 @@ export default {
     //use function for axios call
     this.store.getSingleProfile(url);
   },
-  methods:{
+  methods: {
     setHoverVote: function (vote) {
       this.hoverVote = vote;
     },
@@ -224,46 +224,43 @@ export default {
         <p class="text-dark-gray"></p>
 
         <form :action="store.api_url + 'api/votes/'" method="POST">
-      <div class="mb-3">
-        <input type="hidden" :value="store.singleProfile.id" name="profile_id" />
-        <input type="hidden" :value="'2023-07-07 15:30:00'" name="time" />
-        <input type="hidden" name="vote" :value="vote">
-        <input type="hidden" name="slug" :value="store.singleProfile.slug">
-        <span v-for="i in 5" :key="i" class="rating-star" @click="openConfirmationModal(i)" @mouseover="setHoverVote(i)"
-          @mouseout="clearHoverVote">
-          <i :class="[hoverVote >= i ? 'fas' : 'far', 'fa-star']"></i>
-        </span>
-      </div>
+          <div class="mb-3">
+            <input type="hidden" :value="store.singleProfile.id" name="profile_id" />
+            <input type="hidden" :value="'2023-07-07 15:30:00'" name="time" />
+            <input type="hidden" name="vote" :value="vote">
+            <input type="hidden" name="slug" :value="store.singleProfile.slug">
+            <span v-for="i in 5" :key="i" class="rating-star" @click="openConfirmationModal(i)"
+              @mouseover="setHoverVote(i)" @mouseout="clearHoverVote">
+              <i :class="[hoverVote >= i ? 'fas' : 'far', 'fa-star']"></i>
+            </span>
+          </div>
 
-      <!-- Modale di conferma voto -->
-      <div class="modal" ref="confirmationModal" @click.self="closeConfirmationModal">
-        <div class="modal-dialog">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h5 class="modal-title">Conferma voto</h5>
-              <button type="button" class="close" data-dismiss="modal" @click="closeConfirmationModal">
-                <span>&times;</span>
-              </button>
-            </div>
-            <div class="modal-body">
-              <p>Do you want to send this vote?</p>
-            </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-secondary" data-dismiss="modal"
-                @click="closeConfirmationModal">Annulla</button>
-              <button type="submit" class="btn btn-primary">Yes</button>
+          <!-- Modale di conferma voto -->
+          <div class="modal" ref="confirmationModal" @click.self="closeConfirmationModal">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title">Conferma voto</h5>
+                  <button type="button" class="close" data-dismiss="modal" @click="closeConfirmationModal">
+                    <span>&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                  <p>Do you want to send this vote?</p>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-dismiss="modal"
+                    @click="closeConfirmationModal">Annulla</button>
+                  <button type="submit" class="btn btn-primary">Yes</button>
+                </div>
+              </div>
             </div>
           </div>
-        </div>
-      </div>
-    </form>
-
-
-        <ul v-show="store.singleProfile.votes">
-          <li v-for="vote in store.singleProfile.votes">
-            {{ vote.vote }}
-          </li>
-        </ul>
+        </form>
+        <h6> Average vote</h6>
+        <p v-show="store.singleProfile.votes">
+          {{ store.singleProfile.average_vote }}
+        </p>
       </div>
       <div class="col-8">
         <div class="container bg-light-gray px-0 mx-0">
