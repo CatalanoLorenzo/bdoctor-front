@@ -55,12 +55,8 @@ export default {
 </script>
 <template>
   <div>
-    <h3>Add a Review</h3>
-    <form
-      :action="store.api_url + 'api/reviews/'"
-      method="post"
-      @submit="checkError"
-    >
+    <h4 class="mb-5">Add a Review</h4>
+    <form :action="store.api_url + 'api/reviews/'" method="post" @submit="checkError">
       <input type="hidden" :value="store.singleProfile.id" name="profile_id" />
       <input type="hidden" :value="'2023-07-07 15:30:00'" name="date" />
       <input type="hidden" :value="store.singleProfile.slug" name="slug" />
@@ -72,15 +68,8 @@ export default {
 
       <div class="mb-3">
         <label for="name" class="form-label">Name</label>
-        <input
-          v-model="inputName"
-          type="text"
-          class="form-control"
-          name="name"
-          id="name"
-          aria-describedby="helpId"
-          placeholder="Type your name and here"
-        />
+        <input v-model="inputName" type="text" class="form-control" name="name" id="name" aria-describedby="helpId"
+          placeholder="Type your name and here" />
       </div>
 
       <!-- surname -->
@@ -90,15 +79,8 @@ export default {
 
       <div class="mb-3">
         <label for="surname" class="form-label">Surname</label>
-        <input
-          v-model="inputSurname"
-          type="text"
-          class="form-control"
-          name="surname"
-          id="surname"
-          aria-describedby="helpId"
-          placeholder="Type your Surname here"
-        />
+        <input v-model="inputSurname" type="text" class="form-control" name="surname" id="surname"
+          aria-describedby="helpId" placeholder="Type your Surname here" />
       </div>
 
       <!-- email -->
@@ -108,15 +90,8 @@ export default {
 
       <div class="mb-3">
         <label for="email" class="form-label">email</label>
-        <input
-          v-model="inputEmail"
-          type="text"
-          class="form-control"
-          name="email"
-          id="email"
-          aria-describedby="helpId"
-          placeholder="Type your Email here"
-        />
+        <input v-model="inputEmail" type="text" class="form-control" name="email" id="email" aria-describedby="helpId"
+          placeholder="Type your Email here" />
       </div>
 
       <!-- text -->
@@ -126,13 +101,7 @@ export default {
 
       <div class="mb-3">
         <label for="text" class="form-label">Reviews</label>
-        <textarea
-          v-model="inputText"
-          class="form-control"
-          name="text"
-          id="text"
-          rows="3"
-        ></textarea>
+        <textarea v-model="inputText" class="form-control" name="text" id="text" rows="3"></textarea>
       </div>
 
       <!-- submit -->
