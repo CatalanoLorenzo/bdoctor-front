@@ -52,11 +52,14 @@ export default {
     <div class="container">
         <div class="row">
             <div class="col">
-                <SpecializationSelect ref="selectedSpecialization"></SpecializationSelect>
-                <!-- start filter  -->
-                <StarFilter ref="selectedVote"></StarFilter>
-                <!-- review filter -->
-                <ReviewFilter ref="selectedReview"></ReviewFilter>
+                <div>
+                    <!-- specilization filter -->
+                    <SpecializationSelect ref="selectedSpecialization"></SpecializationSelect>
+                    <!-- start filter  -->
+                    <StarFilter ref="selectedVote"></StarFilter>
+                    <!-- review filter -->
+                    <ReviewFilter ref="selectedReview"></ReviewFilter>
+                </div>
                 <button @click="conditionSelecSpecialization()" type="button" class="btn btn-primary">search</button>
             </div>
         </div>
