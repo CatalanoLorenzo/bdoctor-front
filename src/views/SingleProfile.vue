@@ -52,8 +52,10 @@ export default {
 <template>
   <div class="container">
     <div class="row">
-      <div class="col-12 bg-light-gray mt-5 shadow-lg rounded-4 p-4">
-        <div class="d-flex flex-wrap align-items-center">
+      <div class="col-12 bg-light-gray mt-5">
+        <div
+          class="d-flex flex-wrap align-items-center shadow-lg rounded-4 p-4"
+        >
           <div class="h-25 w-25 mx-5">
             <img
               class="img-fluid rounded-5"
@@ -152,102 +154,115 @@ export default {
         </div>
       </div>
     </div>
-    <!-- profile info Doctor -->
-    <div class="row mt-4 gap-4">
-      <div class="col-4 bg-light-gray shadow-lg rounded-4 p-3 h-25">
-        <p class="text-dark-gray"></p>
+  </div>
+  <!-- profile info Doctor -->
+  <div class="container mt-4">
+    <div class="row h-100">
+      <div class="col-sm-12 col-lg-6 bg-lighter-gray">
+        <div class="shadow p-4 rounded-4">
+          <p class="text-dark-gray"></p>
 
-        <!-- Add a vote to doctor -->
-        <h4>Add vote to this doctor</h4>
-        <form :action="store.api_url + 'api/votes/'" method="POST">
-          <div class="mb-3">
-            <input
-              type="hidden"
-              :value="store.singleProfile.id"
-              name="profile_id"
-            />
-            <input type="hidden" :value="'2023-07-07 15:30:00'" name="time" />
-            <input type="hidden" name="vote" :value="vote" />
-            <input
-              type="hidden"
-              name="slug"
-              :value="store.singleProfile.slug"
-            />
-            <span
-              v-for="i in 5"
-              :key="i"
-              class="rating-star"
-              @click="openConfirmationModal(i)"
-              @mouseover="setHoverVote(i)"
-              @mouseout="clearHoverVote"
+          <!-- Add a vote to doctor -->
+          <h4>Add vote to this doctor</h4>
+          <form :action="store.api_url + 'api/votes/'" method="POST">
+            <div class="mb-3">
+              <input
+                type="hidden"
+                :value="store.singleProfile.id"
+                name="profile_id"
+              />
+              <input type="hidden" :value="'2023-07-07 15:30:00'" name="time" />
+              <input type="hidden" name="vote" :value="vote" />
+              <input
+                type="hidden"
+                name="slug"
+                :value="store.singleProfile.slug"
+              />
+              <span
+                v-for="i in 5"
+                :key="i"
+                class="rating-star"
+                @click="openConfirmationModal(i)"
+                @mouseover="setHoverVote(i)"
+                @mouseout="clearHoverVote"
+              >
+                <i :class="[hoverVote >= i ? 'fas' : 'far', 'fa-star']"></i>
+              </span>
+            </div>
+
+            <!-- Modale di conferma voto -->
+            <div
+              class="modal"
+              ref="confirmationModal"
+              @click.self="closeConfirmationModal"
             >
-              <i :class="[hoverVote >= i ? 'fas' : 'far', 'fa-star']"></i>
-            </span>
-          </div>
-
-          <!-- Modale di conferma voto -->
-          <div
-            class="modal"
-            ref="confirmationModal"
-            @click.self="closeConfirmationModal"
-          >
-            <div class="modal-dialog">
-              <div class="modal-content">
-                <div class="modal-header">
-                  <h5 class="modal-title">Conferma voto</h5>
-                  <button
-                    type="button"
-                    class="close"
-                    data-dismiss="modal"
-                    @click="closeConfirmationModal"
-                  >
-                    <span>&times;</span>
-                  </button>
-                </div>
-                <div class="modal-body">
-                  <p>Do you want to send this vote?</p>
-                </div>
-                <div class="modal-footer">
-                  <button
-                    type="button"
-                    class="btn btn-secondary"
-                    data-dismiss="modal"
-                    @click="closeConfirmationModal"
-                  >
-                    Annulla
-                  </button>
-                  <button type="submit" class="btn btn-primary">Yes</button>
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title">Conferma voto</h5>
+                    <button
+                      type="button"
+                      class="close"
+                      data-dismiss="modal"
+                      @click="closeConfirmationModal"
+                    >
+                      <span>&times;</span>
+                    </button>
+                  </div>
+                  <div class="modal-body">
+                    <p>Do you want to send this vote?</p>
+                  </div>
+                  <div class="modal-footer">
+                    <button
+                      type="button"
+                      class="btn btn-secondary"
+                      data-dismiss="modal"
+                      @click="closeConfirmationModal"
+                    >
+                      Annulla
+                    </button>
+                    <button type="submit" class="btn btn-primary">Yes</button>
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
-        </form>
-        <h6>Average vote</h6>
-        <p v-show="store.singleProfile.votes">
-          {{ store.singleProfile.average_vote }}
-        </p>
+          </form>
+          <h6>Average vote</h6>
+          <p v-show="store.singleProfile.votes">
+            {{ store.singleProfile.average_vote }}
+          </p>
+        </div>
       </div>
-      <div class="col-7">
-        <div class="container bg-light-gray px-0 mx-0">
-          <div class="row flex-column">
-            <div class="col bg-lighter-gray shadow-lg rounded-4">
-              <div class="p-4">
-                <!-- Review Component -->
-                <ReviewDoctor></ReviewDoctor>
-              </div>
-            </div>
-            <!-- review doctor -->
-            <div class="col bg-lighter-gray shadow-lg rounded-4 mt-3 p-3">
-              <h4>Last Reviews</h4>
-              <ul class="last_reviews" v-show="store.singleProfile.reviews">
-                <li v-for="review in store.singleProfile.reviews">
-                  <p>{{ review.name }} {{ review.surname }}</p>
-                  <p>{{ review.text }}</p>
-                  <p>{{ review.data }}</p>
-                </li>
-              </ul>
-            </div>
-          </div>
+      <!-- col-12 VOTE -->
+      <div class="col-sm-12 col-lg-6 bg-lighter-gray mt-4 mt-lg-0">
+        <div class="shadow p-4 rounded-4">
+          <p>ciao</p>
+        </div>
+      </div>
+      <!-- stat. vote -->
+    </div>
+  </div>
+
+  <!-- first end container -->
+  <div class="container bg-light-gray mt-4">
+    <div class="row">
+      <div class="col-sm-12 col-lg-6 bg-lighter-gray">
+        <div class="shadow p-4 rounded-4">
+          <!-- Review Component -->
+          <ReviewDoctor></ReviewDoctor>
+        </div>
+      </div>
+      <!-- review doctor -->
+      <div class="col-sm-12 col-lg-6 bg-lighter-gray mt-4 mt-lg-0">
+        <div class="shadow p-4 rounded-4">
+          <h4>Last Reviews</h4>
+          <ul class="last_reviews" v-show="store.singleProfile.reviews">
+            <li v-for="review in store.singleProfile.reviews">
+              <p>{{ review.name }} {{ review.surname }}</p>
+              <p>{{ review.text }}</p>
+              <p>{{ review.data }}</p>
+            </li>
+          </ul>
         </div>
       </div>
     </div>

@@ -8,7 +8,7 @@
   height: 500px;
 }
 
-@media screen and (min-width: 660px) {
+@media screen and (min-width: 768px) {
   .jumbotron {
     background-image: url(/public/img/Doctor_01-removebg-preview.png);
     background-repeat: no-repeat;
@@ -16,3 +16,19 @@
     background-size: 350px;
   }
 }
+
+// @media screen and (max-width: 768px) {
+//    {
+//     background-color: blue;
+//   }
+// }
+// @media screen and (max-width: 425px) {
+//   body {
+//     background-color: olive;
+//   }
+// }
+// @media screen and (max-width: 375px) {
+//   body {
+//     background-color: olive;
+//   }
+// }

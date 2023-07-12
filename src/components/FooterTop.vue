@@ -5,7 +5,7 @@ export default {
 </script>
 
 <template>
-  <div class="test  d-flex justify-content-end align-items-end">
+  <!-- <div class="test  d-flex justify-content-end align-items-end">
     <footer class="footer  position-relative w-100 d-flex justify-content-center align-content-center flex-column">
       <div class="container">
         <div class="row">
@@ -90,7 +90,7 @@ export default {
         </div>
       </div>
     </footer>
-  </div>
+  </div> -->
 </template>
 
 <style lang="scss" scoped></style>
