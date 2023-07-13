@@ -1,0 +1,14 @@
+@use './variables.scss' as *;
+
+.banner_doc {
+    background-color: $bd_tertiary;
+
+    a {
+        background-color: $bd_fourth;
+
+        &:hover {
+            background-color: $bd_evi1;
+            color: white;
+        }
+    }
+}
