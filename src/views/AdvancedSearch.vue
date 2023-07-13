@@ -21,6 +21,8 @@ export default {
 };
 </script>
 <template>
-  <SearchPannel></SearchPannel>
-  <ProfilesFiltered :idSpecialization="$route.query.specializationSelect"></ProfilesFiltered>
+  <main>
+    <SearchPannel></SearchPannel>
+    <ProfilesFiltered :idSpecialization="$route.query.specializationSelect"></ProfilesFiltered>
+  </main>
 </template>

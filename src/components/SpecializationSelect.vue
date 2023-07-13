@@ -15,9 +15,9 @@ export default {
 }
 </script>
 <template>
-    <div class="mb-3 w-50">
-        <label for="specializations" class="form-label fs-4">Specializations</label>
-        <select v-model="selectedSpecialization" class="form-select form-select-lg text-dark" name="specializations"
+    <div class="d-flex flex-column flex-md-row">
+        <label for="specializations" class="form-label fs-4 text-white">Specializations: </label>
+        <select v-model="selectedSpecialization" class="form-select form-select-lg text-dark specialization-form" name="specializations"
             id="specializations">
             <option value="all">All</option>
             <option v-for="specialization in store.specializations" :value="specialization.id">

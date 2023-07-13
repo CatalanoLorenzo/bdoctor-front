@@ -9,9 +9,9 @@ export default {
 }
 </script>
 <template>
-    <div class="mb-3 w-50">
-        <label for="vote" class="form-label fs-4">Filter by vote</label>
-        <select v-model="selectedVote" class="form-select form-select-lg text-dark" name="vote" id="vote">
+    <div class="mb-3 filter-star">
+        <label for="vote" class="form-label fs-4">Filter by vote:</label>
+        <select v-model="selectedVote" class="form-select form-select-lg text-dark d-inline-block" name="vote" id="vote">
             <option value="all">All</option>
             <option value="1">⭐</option>
             <option value="2">⭐⭐</option>
