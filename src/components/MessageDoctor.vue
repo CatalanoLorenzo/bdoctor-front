@@ -48,11 +48,7 @@ export default {
 };
 </script>
 <template>
-  <form
-    :action="store.api_url + 'api/messages'"
-    method="post"
-    @submit="checkError"
-  >
+  <form :action="store.api_url + 'api/messages'" method="post" @submit="checkError">
     <input type="hidden" :value="store.user.id" name="user_id" />
     <input type="hidden" :value="'2023-07-07 15:30:00'" name="date" />
     <input type="hidden" :value="store.singleProfile.slug" name="slug" />
@@ -63,15 +59,8 @@ export default {
 
     <div class="mb-3">
       <label for="user_name_surname" class="form-label">Name and Surname</label>
-      <input
-        v-model="inputNameSurname"
-        type="text"
-        class="form-control"
-        name="user_name_surname"
-        id="user_name_surname"
-        aria-describedby="helpId"
-        placeholder="Mario Rossi"
-      />
+      <input v-model="inputNameSurname" type="text" class="form-control" name="user_name_surname" id="user_name_surname"
+        aria-describedby="helpId" placeholder="Mario Rossi" />
     </div>
     <!-- Name -->
 
@@ -81,15 +70,8 @@ export default {
 
     <div class="mb-3">
       <label for="email" class="form-label">E-mail</label>
-      <input
-        v-model="inputEmail"
-        type="text"
-        class="form-control"
-        name="email"
-        id="email"
-        aria-describedby="helpId"
-        placeholder=""
-      />
+      <input v-model="inputEmail" type="text" class="form-control" name="email" id="email" aria-describedby="helpId"
+        placeholder="" />
     </div>
     <!-- Email -->
     <div v-show="errorMessage" class="alert alert-danger" role="alert">
@@ -97,13 +79,7 @@ export default {
     </div>
     <div class="mb-3">
       <label for="text" class="form-label"></label>
-      <textarea
-        v-model="inputMessage"
-        class="form-control"
-        name="text"
-        id="text"
-        rows="5"
-      ></textarea>
+      <textarea v-model="inputMessage" class="form-control" name="text" id="text" rows="5"></textarea>
     </div>
     <!-- Email -->
 
