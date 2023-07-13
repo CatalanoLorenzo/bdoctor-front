@@ -35,7 +35,7 @@ export default {
             query: { specializationSelect: selectedSpecialization }
           }">
             <button type="button" class="btn btn-primary col-12 col-md-6 mt-3">
-              Searchs
+              Search
             </button>
           </router-link>
         </div>

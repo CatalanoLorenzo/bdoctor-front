@@ -39,7 +39,7 @@ export default {
 <template>
     <div>
         <div id="card_doctor" class="container position-relative">
-            <h1 class="bd_primary p-3 text-white w-50 rounded mb-2">Featured Doctors </h1>
+            <h2 class="bd_primary p-3 text-white w-50 rounded mb-2">Featured Doctors </h2>
             <!-- buttons -->
             <div class="buttons d-flex w-100 justify-content-center gap-3">
                 <div @click="prevSlide" class="bg_opacity p-4 rounded-circle text-white">
@@ -50,18 +50,18 @@ export default {
                 </div>
             </div>
 
-            <div class="row row-cols-1 row-cols-lg-3 position-relative">
+            <div class="row row-cols-1 row-cols-md-3 position-relative">
                 <div v-for="(profile, index) in store.profiles.slice(currentSlide, currentSlide + 3).concat(store.profiles.slice(0, Math.max(0, 3 - store.profiles.length + currentSlide)))"
                     :key="index" class="col my-3">
                     <router-link :to="{ name: 'single-profile', params: { slug: profile.slug } }"
                         class="text-decoration-none text-dark ">
-                        <div class="top_card d-flex flex-column align-items-center">
-                            <div class="image_single_doctor m-3 ">
+                        <div class="top_card d-flex flex-md-column justify-content-be align-items-center">
+                            <div class="image_single_doctor px-2 m-lg-3 ">
                                 <img class="rounded-circle" :src="store.url_image + profile.doctor_image"
                                     :alt="profile.slug">
                             </div>
                             <div class=" card-body col-6">
-                                <h5 class="card-title text-center ">{{ profile.user.name + ' ' +
+                                <h5 class="card-title text-center fs-1 name_surname">{{ profile.user.name + ' ' +
                                     profile.user.surname }}</h5>
                                 <div class="text-center" v-for="specialization in profile.specializations">
                                     {{ specialization.name }}

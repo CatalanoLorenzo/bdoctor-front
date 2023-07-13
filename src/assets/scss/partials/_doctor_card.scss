@@ -1,11 +1,15 @@
 @use "./variables.scss" as *;
 
-@media screen and (min-width: 992px) {
+@media screen and (min-width: 768px) {
   .buttons {
     justify-content: space-between !important;
     position: absolute;
     top: 50%;
     z-index: 1000;
+  }
+
+  .name_surname {
+    font-size: 18px !important;
   }
 }
 
@@ -13,9 +17,11 @@
   background-color: #5b5b5b9e;
 }
 
+
 .image_single_doctor {
-  width: 100px;
-  height: 100px;
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
   object-position: center;
 
   img {
