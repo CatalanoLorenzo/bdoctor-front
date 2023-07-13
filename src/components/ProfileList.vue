@@ -55,29 +55,26 @@ export default {
                     :key="index" class="col my-3">
                     <router-link :to="{ name: 'single-profile', params: { slug: profile.slug } }"
                         class="text-decoration-none text-dark ">
-
-                        <div class="doctor_card card h-100 border-0 d-flex flex-column justify-content-between">
-
-                            <div class="top_card d-flex">
-                                <div class="image_single_doctor m-3 ">
-                                    <img class="rounded-circle" :src="store.url_image + profile.doctor_image"
-                                        :alt="profile.slug">
-                                </div>
-                                <div class=" card-body col-6">
-                                    <h4 class="card-title ">{{ profile.user.name + ' ' +
-                                        profile.user.surname }}</h4>
-                                    <small>{{ profile.user.address }}</small><br>
-                                    <small>{{ profile.user.email }}</small>
-                                    <p class="card-text text_section_card">{{ profile.performances }}</p>
+                        <div class="top_card d-flex flex-column align-items-center">
+                            <div class="image_single_doctor m-3 ">
+                                <img class="rounded-circle" :src="store.url_image + profile.doctor_image"
+                                    :alt="profile.slug">
+                            </div>
+                            <div class=" card-body col-6">
+                                <h5 class="card-title text-center ">{{ profile.user.name + ' ' +
+                                    profile.user.surname }}</h5>
+                                <div class="text-center" v-for="specialization in profile.specializations">
+                                    {{ specialization.name }}
                                 </div>
                             </div>
-                            <div class="phone_number_section card-footer d-flex justify-content-center">
+                        </div>
+                        <!-- <div class="phone_number_section card-footer d-flex justify-content-center">
                                 <b class="me-2 text-light">Phone:</b>
                                 <h6 class="text-white mb-0 align-self-center">{{ profile.phone_number }}</h6>
-                            </div>
+                            </div> -->
 
 
-                        </div>
+
                     </router-link>
 
                 </div>
