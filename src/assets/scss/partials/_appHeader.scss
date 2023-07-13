@@ -1,1 +1,19 @@
-@use './variables.scss' as *;
+@use "./variables.scss" as *;
+
+.header {
+  width: 100%;
+
+  z-index: 9999;
+}
+
+.logo_laravel img {
+  transform: scale(8);
+}
+
+.logo_laravel img {
+  width: 50vw;
+  max-width: 100px;
+}
+.elemento-successivo {
+  margin-top: 50px;
+}
