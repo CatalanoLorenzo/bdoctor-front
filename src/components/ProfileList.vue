@@ -39,7 +39,7 @@ export default {
 <template>
     <div>
         <div id="card_doctor" class="container position-relative">
-            <h1>Sponsorized Doctors</h1>
+            <h1 class="bd_primary p-3 text-white w-50 rounded mb-2">Featured Doctors </h1>
             <!-- buttons -->
             <div class="buttons d-flex w-100 justify-content-center gap-3">
                 <div @click="prevSlide" class="bg_opacity p-4 rounded-circle text-white">
