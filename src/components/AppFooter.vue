@@ -8,7 +8,7 @@ export default {
 </script>
 
 <template>
-  <footer class="appFooter">
+  <footer class="appFooter mt-5">
     <div class="test d-flex justify-content-end align-items-end">
       <div class="footer position-relative w-100 d-flex justify-content-center align-content-center flex-column">
         <div class="waves">

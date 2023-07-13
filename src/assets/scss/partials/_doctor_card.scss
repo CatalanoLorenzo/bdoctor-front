@@ -1,5 +1,40 @@
 @use "./variables.scss" as *;
 
+.profile_list {
+  background-color: $bd_fourth;
+}
+
+@media screen and (min-width: 768px) {
+  .buttons {
+    justify-content: space-between !important;
+    position: absolute;
+    top: 50%;
+    z-index: 1000;
+  }
+
+  .name_surname {
+    font-size: 18px !important;
+  }
+}
+
+.bg_opacity {
+  background-color: #5b5b5b9e;
+}
+
+
+.image_single_doctor {
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  object-position: center;
+
+  img {
+    width: 100%;
+    height: 100%;
+  }
+}
+
+
 #info_doctor {
   img {
     height: 100%;
@@ -8,21 +43,28 @@
   }
 }
 
+.card-footer {
+  background-color: $bd_secondary;
+
+
+}
 
 .doctor_card {
   box-shadow: 1px -1px 22px -1px #494141;
   // position: relative;
   //box-shadow: 10px 0px 20px 1px #000000;
 
-  a {
-    .card-footer {
-      background-color: $bd_secondary;
-      // position: absolute;
-      // bottom: 0;
-      // width: 100%;
-    }
-  }
+
 }
+
+.bd_primary {
+  background-color: $bd_fourth;
+}
+
+// .text_section_card {
+//   max-height: 150px;
+//   overflow-y: scroll;
+// }
 
 .last_reviews {
   height: 500px;
