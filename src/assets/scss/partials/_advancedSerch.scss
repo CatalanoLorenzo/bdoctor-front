@@ -1,0 +1,29 @@
+.search-pannel {
+    background-color: #6fc4ee;
+
+    .filter-star,
+    .review-filter {
+        width: 200px;
+    }
+
+    .collapse-filter {
+        bottom: -1rem;
+        left: 2%;
+    }
+
+    .specialization-form,
+    .filter-button {
+        max-width: 260px;
+    }
+    @media screen and (min-width: 768px) {
+        .specialization-form
+        {
+            width: 400px;
+        }
+        .collapse-filter {
+            bottom: -1rem;
+            left: 99%
+        }
+    }
+
+}

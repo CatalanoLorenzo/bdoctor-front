@@ -9,8 +9,8 @@ export default {
 }
 </script>
 <template>
-    <div class="mb-3 w-50">
-        <label for="review" class="form-label fs-4">Filter by review</label>
+    <div class="mb-3 review-filter">
+        <label for="review" class="form-label fs-4">Filter by review:</label>
         <select v-model="selectedReview" class="form-select form-select-lg text-dark" name="review" id="review">
             <option value="all">All</option>
             <option value="1">-2 </option>
