@@ -8,13 +8,18 @@
   }
 }
 
+
 .doctor_card {
   box-shadow: 1px -1px 22px -1px #494141;
+  // position: relative;
   //box-shadow: 10px 0px 20px 1px #000000;
 
   a {
     .card-footer {
       background-color: $bd_secondary;
+      // position: absolute;
+      // bottom: 0;
+      // width: 100%;
     }
   }
 }
@@ -24,6 +29,7 @@
   overflow-y: scroll;
   word-wrap: break-word;
 }
+
 // --------------test
 // :root {
 //   --bd-primary: #3056e1ce;
