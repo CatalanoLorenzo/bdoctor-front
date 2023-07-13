@@ -1,5 +1,19 @@
 @use "./variables.scss" as *;
 
+@media screen and (min-width: 992px) {
+  .buttons {
+    justify-content: space-between !important;
+    position: absolute;
+    top: 50%;
+    z-index: 1000;
+  }
+}
+
+.bg_opacity {
+  background-color: #5b5b5b9e;
+}
+
+
 #info_doctor {
   img {
     height: 100%;

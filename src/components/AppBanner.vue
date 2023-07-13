@@ -1,7 +1,7 @@
 <script>
 export default {
-  name:AppBanner,
-    data() {
+  name: "AppBanner",
+  data() {
     return {};
   },
 };

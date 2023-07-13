@@ -1,14 +1,21 @@
 // Import all of Bootstrap's CSS
 @import "/node_modules/bootstrap/scss/bootstrap";
-@import "./partials/appHeader"; /* mario */
-@import "./partials/jumbo"; /* giuseppe */
+@import "./partials/appHeader";
+/* mario */
+@import "./partials/jumbo";
+/* giuseppe */
 @import "./partials/doctor_card";
-@import "./partials/appFooter"; /* Alex-francesco */
+@import "./partials/appFooter";
+/* Alex-francesco */
 @import "./partials/percentVote";
-@import "./partials/appBanner"; /* Alex-francesco */
-@import "./partials/appProfileList"; /* giuseppe */
-@import "./partials/advancedSearch"; /* lorenzo */
-@import "./partials/profileFilter"; /* lorenzo */
+@import "./partials/appBanner";
+/* Alex-francesco */
+@import "./partials/appProfileList";
+/* giuseppe */
+@import "./partials/advancedSerch";
+/* lorenzo */
+@import "./partials/profileFilter";
+/* lorenzo */
 
 body {
   overflow-x: hidden;
