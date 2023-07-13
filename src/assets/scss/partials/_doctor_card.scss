@@ -1,5 +1,9 @@
 @use "./variables.scss" as *;
 
+.profile_list {
+  background-color: $bd_fourth;
+}
+
 @media screen and (min-width: 768px) {
   .buttons {
     justify-content: space-between !important;

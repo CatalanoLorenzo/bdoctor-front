@@ -37,9 +37,10 @@ export default {
 </script>
 
 <template>
-    <div>
+    <div class="profile_list">
+        <h2 class=" bg-white p-3 w-100 text-center py-3 mb-2">Featured Doctors </h2>
         <div id="card_doctor" class="container position-relative">
-            <h2 class="bd_primary p-3 text-white w-50 rounded mb-2">Featured Doctors </h2>
+
             <!-- buttons -->
             <div class="buttons d-flex w-100 justify-content-center gap-3">
                 <div @click="prevSlide" class="bg_opacity p-4 rounded-circle text-white">
@@ -61,9 +62,9 @@ export default {
                                     :alt="profile.slug">
                             </div>
                             <div class=" card-body col-6">
-                                <h5 class="card-title text-center fs-1 name_surname">{{ profile.user.name + ' ' +
+                                <h5 class="card-title text-center fs-1 name_surname text-white">{{ profile.user.name + ' ' +
                                     profile.user.surname }}</h5>
-                                <div class="text-center" v-for="specialization in profile.specializations">
+                                <div class="text-center text-white" v-for="specialization in profile.specializations">
                                     {{ specialization.name }}
                                 </div>
                             </div>

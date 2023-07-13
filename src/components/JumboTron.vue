@@ -11,7 +11,7 @@ export default {
 };
 </script>
 <template>
-  <div class="jumbotron p-5 mb-4">
+  <div class="jumbotron p-5">
     <div class="container-fluid py-5">
       <h1 class="display-5 fw-bold text-white">
         Are you looking for a doctor?
