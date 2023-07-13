@@ -8,9 +8,11 @@ export default {
   <div class="flex-container header fixed-top">
     <div class="row">
       <nav class="navbar navbar-expand-md navbar-light bg-white">
-        <div class="container">
+        <div
+          class="container d-flex justify-content-center align-items-center p-4"
+        >
           <div class="col-4">
-            <a class="navbar-brand d-flex align-items-center" href="/">
+            <a class="navbar-brand d-flex" href="/">
               <div class="logo_laravel navbar-expand-sm px-2 px-sm-0">
                 <div class="fadeIn">
                   <img
@@ -37,15 +39,21 @@ export default {
               <span class="navbar-toggler-icon"></span>
             </button>
 
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <div
+              class="collapse navbar-collapse position-fixed"
+              id="navbarSupportedContent"
+            >
               <!-- Right Side Of Navbar -->
-              <ul class="navbar-nav ml-auto align-content-end gap-2">
+              <ul class="navbar-nav align-content-end">
                 <!-- Authentication Links -->
-                <a class="btn" href="http://127.0.0.1:8000/login" role="button"
+                <a
+                  class="btn btn-outline-primary btn-sm m-1"
+                  href="http://127.0.0.1:8000/login"
+                  role="button"
                   >Login</a
                 >
                 <a
-                  class="btn"
+                  class="btn btn-outline-primary btn-sm m-1"
                   href="http://127.0.0.1:8000/register"
                   role="button"
                   >Register</a
@@ -57,5 +65,6 @@ export default {
       </nav>
     </div>
   </div>
-  <div class="elemento-successivo m-5"></div>
+
+  <div class="elemento-successivo"></div>
 </template>
