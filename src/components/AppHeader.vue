@@ -18,13 +18,15 @@ export default {
   <nav
     class="navbar navbar-expand-lg navbar-white bg-white custom-navbar fixed-top"
   >
-    <div class="container">
-      <img
-        class="logo img-fluid"
-        src="../assets/img/logoBDoctor.png"
-        id="icon"
-        alt="User Icon"
-      />
+    <div class="container bg-white">
+      <a class="nav-link" href="http://localhost:5174/">
+        <img
+          class="logo img-fluid"
+          src="../assets/img/logoBDoctor.png"
+          id="icon"
+          alt="User Icon"
+        />
+      </a>
       <button
         class="navbar-toggler"
         type="button"
@@ -34,7 +36,7 @@ export default {
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" :class="{ show: isMenuOpen }">
-        <ul class="navbar-nav ms-auto">
+        <ul class="navbar-nav ms-auto mt-3">
           <li class="nav-item">
             <a class="nav-link" href="http://127.0.0.1:8000/login">
               <button class="btn btn-primary">Login</button>
@@ -52,11 +54,11 @@ export default {
 </template>
 <style>
 .container .logo {
-  transform: scale(3);
+  transform: scale(5);
   margin-left: 4.5rem;
   height: 1rem;
 }
-.nav {
-  height: 6rem;
+nav {
+  height: 5.3rem;
 }
 </style>
