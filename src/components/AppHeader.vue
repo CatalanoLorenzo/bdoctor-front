@@ -50,7 +50,7 @@ export default {
 </template>
 <style>
 .container img {
-  transform: scale(2.5);
+  transform: scale(2);
 }
 
 /* .container {
