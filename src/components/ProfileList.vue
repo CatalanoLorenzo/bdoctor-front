@@ -5,7 +5,8 @@ export default {
     data() {
         return {
             store,
-            currentSlide: 0
+            currentSlide: 0,
+            isMobile: false
         }
     },
     methods: {
@@ -22,7 +23,10 @@ export default {
             } else {
                 this.currentSlide--;
             }
-        }
+        },
+        checkIfMobile() {
+            this.isMobile = window.matchMedia('(max-width: 767px)').matches;
+        },
     },
     mounted() {
         const url_profiles = store.api_url + store.api_profile;
@@ -32,14 +36,20 @@ export default {
         this.store.getSpecializations(url_specializations);
 
         setInterval(this.nextSlide, 2000);
-    }
+        this.checkIfMobile();
+        window.addEventListener('resize', this.checkIfMobile);
+    },
+    destroyed() {
+        // Rimozione dell'evento resize quando il componente viene distrutto
+        window.removeEventListener('resize', this.checkIfMobile);
+    },
 }
 </script>
 
 <template>
     <div class="profile_list">
         <h2 class=" bg-white p-3 w-100 text-center py-3 mb-2">Featured Doctors </h2>
-        <div id="card_doctor" class="container position-relative">
+        <div id="card_doctor" class="container position-relative py-5">
 
             <!-- buttons -->
             <div class="buttons d-flex w-100 justify-content-center gap-3">
@@ -54,6 +64,7 @@ export default {
             <div class="row row-cols-1 row-cols-md-3 position-relative">
                 <div v-for="(profile, index) in store.profiles.slice(currentSlide, currentSlide + 3).concat(store.profiles.slice(0, Math.max(0, 3 - store.profiles.length + currentSlide)))"
                     :key="index" class="col my-3">
+
                     <router-link :to="{ name: 'single-profile', params: { slug: profile.slug } }"
                         class="text-decoration-none text-dark ">
                         <div class="top_card d-flex flex-md-column justify-content-be align-items-center">
@@ -69,20 +80,13 @@ export default {
                                 </div>
                             </div>
                         </div>
-                        <!-- <div class="phone_number_section card-footer d-flex justify-content-center">
-                                <b class="me-2 text-light">Phone:</b>
-                                <h6 class="text-white mb-0 align-self-center">{{ profile.phone_number }}</h6>
-                            </div> -->
-
-
 
                     </router-link>
 
                 </div>
-                <!-- /card -->
+
+
             </div>
-
-
 
         </div>
     </div>
