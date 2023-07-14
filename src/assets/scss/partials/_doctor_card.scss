@@ -1,5 +1,9 @@
 @use "./variables.scss" as *;
 
+.featured_title {
+  color: $bd_primary;
+}
+
 .profile_list {
   background-color: $bd_fourth;
 }
@@ -18,7 +22,20 @@
 }
 
 .bg_opacity {
-  background-color: #5b5b5b9e;
+  background-color: #5b5b5b4f;
+}
+
+.bd-primary {
+  background-color: $bd_primary;
+}
+
+.bd-secondary {
+  background-color: #00a6fb8f
+}
+
+
+.bd-tertiary {
+  background-color: $bd_tertiary;
 }
 
 

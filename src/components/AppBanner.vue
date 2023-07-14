@@ -12,7 +12,7 @@ export default {
 </script>
 <template>
   <div class="container banner_doc rounded rounded-4 mt-5">
-    <div class="row">
+    <div class="banner row">
       <div class="col-12 col-md-6 banner_image p-3">
         <img class="img-fluid rounded rounded-4" src="../../public/img/bdcotors-image-info.jpg" alt="img_info">
       </div>

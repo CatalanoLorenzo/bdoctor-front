@@ -1,5 +1,11 @@
 @use './variables.scss' as *;
 
+
+.banner {
+    margin-top: 6rem;
+    margin-bottom: 6rem;
+}
+
 .banner_doc {
     background-color: $bd_tertiary;
 
