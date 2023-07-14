@@ -18,7 +18,7 @@ export default {
   <nav class="navbar navbar-expand-lg navbar-light bg-light custom-navbar">
     <div class="container">
       <img
-        class="w-25"
+        class="w-25 logo"
         src="../assets/img/bdoctor__2_-removebg-previewPEPPE.png"
         id="icon"
         alt="User Icon"
@@ -49,11 +49,8 @@ export default {
   </nav>
 </template>
 <style>
-.container img {
-  transform: scale(2);
+.container .logo {
+  transform: scale(1.8);
+  margin-left: 1.5rem;
 }
-
-/* .container {
-  height: 120px;
-} */
 </style>
