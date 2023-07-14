@@ -15,11 +15,13 @@ export default {
 </script>
 
 <template>
-  <nav class="navbar navbar-expand-lg navbar-light bg-light custom-navbar">
+  <nav
+    class="navbar navbar-expand-lg navbar-white bg-white custom-navbar fixed-top"
+  >
     <div class="container">
       <img
-        class="w-25 logo"
-        src="../assets/img/bdoctor__2_-removebg-previewPEPPE.png"
+        class="logo img-fluid"
+        src="../assets/img/logoBDoctor.png"
         id="icon"
         alt="User Icon"
       />
@@ -50,7 +52,11 @@ export default {
 </template>
 <style>
 .container .logo {
-  transform: scale(1.8);
-  margin-left: 1.5rem;
+  transform: scale(3);
+  margin-left: 4.5rem;
+  height: 1rem;
+}
+.nav {
+  height: 6rem;
 }
 </style>
