@@ -27,6 +27,7 @@ export default {
           alt="User Icon"
         />
       </a>
+
       <button
         class="navbar-toggler"
         type="button"
@@ -54,11 +55,12 @@ export default {
 </template>
 <style>
 .container .logo {
-  transform: scale(5);
+  transform: scale(3);
   margin-left: 4.5rem;
   height: 1rem;
 }
 nav {
-  height: 5.3rem;
+  position: absolute;
+  height: 6rem;
 }
 </style>
