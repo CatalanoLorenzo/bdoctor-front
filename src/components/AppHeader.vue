@@ -16,9 +16,9 @@ export default {
 
 <template>
   <nav
-    class="navbar navbar-expand-lg navbar-white bg-white custom-navbar fixed-top"
+    class="navbar navbar-expand-lg navbar-white bg-white custom-navbar custom-navbar-height fixed-top"
   >
-    <div class="container bg-white">
+    <div class="container">
       <a class="nav-link" href="http://localhost:5174/">
         <img
           class="logo img-fluid"
@@ -53,13 +53,21 @@ export default {
     </div>
   </nav>
 </template>
+
 <style>
+.custom-navbar-height {
+  height: 80px;
+}
+
+.custom-navbar-height + main {
+  padding-top: 100px;
+}
 .container .logo {
-  transform: scale(3);
+  transform: scale(5);
   margin-left: 4.5rem;
   height: 1rem;
 }
-nav {
+.fixed-top {
   position: absolute;
   height: 6rem;
 }
