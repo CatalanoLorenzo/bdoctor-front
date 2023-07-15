@@ -70,12 +70,13 @@ export default {
                             class="text-decoration-none text-dark ">
                             <div class="top_card d-flex flex-md-column justify-content-be align-items-center">
                                 <div class="image_single_doctor px-2 m-lg-3 ">
-                                    <img class="rounded-circle" :src="store.url_image + profile.doctor_image"
-                                        :alt="profile.slug">
+                                    <img class="rounded-circle shadow bg-white"
+                                        :src="store.url_image + profile.doctor_image" :alt="profile.slug">
                                 </div>
-                                <div class=" card-body col-6">
-                                    <h5 class="card-title text-center fs-1 name_surname text-white">{{ profile.user.name +
-                                        '' + profile.user.surname }}</h5>
+                                <div class=" card-body col-6 d-flex flex-column align-items-center ">
+                                    <h5 class="text-white text-center d-inline "> {{ profile.user.name }} {{
+                                        profile.user.surname
+                                    }}</h5>
                                     <div class="text-center text-white" v-for="specialization in profile.specializations">
                                         {{ specialization.name }}
                                     </div>
@@ -96,13 +97,13 @@ export default {
                             class="text-decoration-none text-dark ">
                             <div class="top_card d-flex flex-md-column justify-content-be align-items-center">
                                 <div class="image_single_doctor px-2 m-lg-3 ">
-                                    <img class="rounded-circle" :src="store.url_image + profile.doctor_image"
-                                        :alt="profile.slug">
+                                    <img class="rounded-circle shadow bg-white"
+                                        :src="store.url_image + profile.doctor_image" :alt="profile.slug">
                                 </div>
-                                <div class=" card-body col-6">
-                                    <h5 class="card-title text-center fs-1 name_surname text-white">{{ profile.user.name
-                                        +
-                                        '' + profile.user.surname }}</h5>
+                                <div class=" card-body col-6 d-flex flex-column align-items-center">
+                                    <h2 class="text-white d-inline "> {{ profile.user.name }} {{
+                                        profile.user.surname
+                                    }}</h2>
                                     <div class="text-center text-white" v-for="specialization in profile.specializations">
                                         {{ specialization.name }}
                                     </div>

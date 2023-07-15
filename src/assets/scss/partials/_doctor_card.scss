@@ -38,6 +38,10 @@
   background-color: $bd_tertiary;
 }
 
+.bd-ev {
+  background-color: $bd_evi2;
+}
+
 
 .image_single_doctor {
   width: 200px;
@@ -56,6 +60,8 @@
 
 
 #info_doctor {
+  margin-top: 6rem;
+
   img {
     height: 100%;
     width: 100%;
