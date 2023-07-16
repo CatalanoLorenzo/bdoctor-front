@@ -56,7 +56,7 @@ export default {
         </ul>
       </div>
       <div class="col-12 col-md-3 mb-3">
-        <img src="" alt="logo" srcset="">
+        <img class="w-50" src="../assets/img/logoBDoctor.png" alt="logo" srcset="">
       </div>
     </div>
   </div>
