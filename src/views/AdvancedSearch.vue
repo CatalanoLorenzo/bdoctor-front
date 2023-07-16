@@ -22,7 +22,13 @@ export default {
 </script>
 <template>
   <main>
-    <SearchPannel></SearchPannel>
+    <SearchPannel class="SearchPannel"></SearchPannel>
     <ProfilesFiltered :idSpecialization="$route.query.specializationSelect"></ProfilesFiltered>
   </main>
 </template>
+<style lang="scss">
+.SearchPannel{
+  margin-top: 10rem;
+
+}
+</style>
