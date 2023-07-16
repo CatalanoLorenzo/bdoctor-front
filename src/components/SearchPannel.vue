@@ -54,9 +54,9 @@ export default {
 <template>
   <section class="search-pannel">
     <div class="container">
-      <div class="row row-cols-1 row-cols-md-2 p-3 justify-content-between">
+      <div class="row row-cols-1 row-cols-md-2 p-3 py-md-5 justify-content-between">
         <div class="col">
-          <div class="d-flex flex-nowrap flex-column flex-md-row position-relative">
+          <div class="d-flex flex-nowrap flex-column flex-md-row position-relative justify-content-between">
             <SpecializationSelect ref="selectedSpecialization"></SpecializationSelect>
             
             <button class="btn btn-primary  filter-button" data-bs-toggle="collapse" href="#colapsmenufilter" role="button"

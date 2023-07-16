@@ -4,6 +4,7 @@
     .filter-star,
     .review-filter {
         width: 200px;
+        height: 200px;
     }
 
     .collapse-filter {
@@ -22,8 +23,35 @@
         }
         .collapse-filter {
             bottom: -1rem;
-            left: 99%
+            left: 80%
         }
     }
 
 }
+        
+            .img-container{
+                border-radius: 50%;
+                width: 100%;
+                img{
+                    max-width: 100%;
+                    aspect-ratio: 1/1;
+                }
+            }
+            .data-doc{
+                max-width: 20%;
+            }
+            .performances-show{
+    /*             max-height: 5rem;
+                max-width: 20%; */
+            }
+            .infobox{
+                max-width: 20%;
+            }
+            @media screen and (min-width: 768px) {
+                .img-container{
+                    width: 25%;
+                }
+                .infobox{
+                    width: 50%;
+                }
+            }
