@@ -27,7 +27,7 @@ export default {
 
             </div>
             <div class="col-12  info-box text-black d-flex flex-column flex-md-row overflow-y-scroll">
-              <p class="mb-0 ">Address: {{ profile.user.address }} E-mail: {{ profile.user.email }} performance : {{
+              <p class="mb-0 "><strong>Address:</strong><br> {{ profile.user.address }} <br> <strong>E-mail:</strong><br> {{ profile.user.email }} <br> <strong> performance :</strong> <br> {{
                 profile.performances }}</p>
 
             </div>
