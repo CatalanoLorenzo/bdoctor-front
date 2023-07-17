@@ -2,6 +2,7 @@
 import { store } from "../store";
 import MessageDoctor from "../components/MessageDoctor.vue";
 import ReviewDoctor from "../components/ReviewDoctor.vue";
+import * as bootstrap from "bootstrap";
 
 export default {
   name: "SingleProfile",
