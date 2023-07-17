@@ -39,6 +39,9 @@ export default {
   </div>
 </template>
 <style lang="scss">
+.info-box{
+  max-height: 45%;
+}
 .box-doctor{
   height: 50vh;
 }
