@@ -16,8 +16,9 @@ export default {
     <div class="row ">
       <div class="col-12 col-md-6 box-doctor rounded-5 my-2 " v-for="profile in store.profiles " >
         <router-link class="text-decoration-none h-100" :to="{ name: 'single-profile', params: { slug: profile.slug } }">
-          <div class="row shadow-lg px-5 pt-3 w-100 h-100">
-
+          <div class="row shadow-lg px-5 pt-3 w-100 h-100 position-relative">
+            
+            <span class="badge badge-icon bg-warning position-absolute" v-show="profile.isSponsored">Sponsored</span>
             <div class="col-6 px-0 img-container object-fit-container  overflow-hidden d-flex justify-content-center rounded-circle">
               <img class="img-fluid" :src="store.url_image + profile.doctor_image" :alt="profile.slug" />
             </div>
@@ -39,6 +40,11 @@ export default {
   </div>
 </template>
 <style lang="scss">
+.badge-icon{
+  top: 5%;
+  right: 5%;
+  width: 10vw !important;
+}
 .info-box{
   max-height: 45%;
 }
